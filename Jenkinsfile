@@ -3,6 +3,7 @@ def APP_NAME
 def APP_VERSION
 def DOCKER_IMAGE_NAME
 def PROD_BUILD = false
+def TAG_BUILD = false
 pipeline {
     agent {
         node {
