@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-backend-user-deployment #나는 k8s-backend-user-deployment라는 이름을 가졌다
+spec: #deployment입장에서 sepc이다.
+  replicas: 3  # 원하는 파드 복제본 수 (기본값: 1)
+  selector:
+    matchLabels:
+      app: k8s-backend-user  # 템플릿의 labels와 일치해야 함
+  template:
+    metadata:
+      labels:
+        app: k8s-backend-user  # selector와 일치해야 함
+    spec:
+      containers:
+        - name: k8s-backend-user
+          image: seungwon9819/k8s-backend-user:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
