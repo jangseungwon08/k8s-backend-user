@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.welab'
-version = '0.0.4'
+version = '0.0.5'
 
 java {
     toolchain {
@@ -22,9 +22,13 @@ configurations {
 repositories {
     mavenCentral()
 }
+ext {
+    set('springCloudVersion', "2025.0.0")
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -33,6 +37,12 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 jar { //plain.jar는 코드만 jar로 묶는 거기때문에 plain.jar생성 비활성화

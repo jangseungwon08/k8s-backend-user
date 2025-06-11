@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@EnableFeignClient
 @SpringBootApplication
 public class K8sBackendUserApplication {
 	public static void main(String[] args) {
