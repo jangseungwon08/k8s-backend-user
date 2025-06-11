@@ -1,6 +1,7 @@
 package com.welab.k8s_backend_user.remote.alim;
 
 import com.welab.k8s_backend_user.common.dto.ApiResponseDto;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(name = "RemoteAlimService",
