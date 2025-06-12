@@ -1,4 +1,4 @@
-package com.welab.k8s_backend_user.common.domain;
+package com.welab.k8s_backend_user.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

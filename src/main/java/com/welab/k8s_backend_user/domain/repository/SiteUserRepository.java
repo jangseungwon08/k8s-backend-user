@@ -1,6 +1,6 @@
-package com.welab.k8s_backend_user.common.domain.repository;
+package com.welab.k8s_backend_user.domain.repository;
 
-import com.welab.k8s_backend_user.common.domain.SiteUser;
+import com.welab.k8s_backend_user.domain.SiteUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

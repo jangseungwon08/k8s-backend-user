@@ -15,3 +15,5 @@ spring:
     generate-ddl: true # 오직 테스트 환경에서만 (spring.jpa.generate-ddl)
     show-sql: true
     open-in-view: false
+  kafka:
+    bootstrap-servers: 192.168.0.231:9092
