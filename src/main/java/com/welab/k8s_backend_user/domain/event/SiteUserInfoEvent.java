@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class SiteUserInfoEvent {
-    public static final String  Topic = "userInfo";
+    public static final String  Topic = "userinfo";
 
     private String action;
 //    비밀번호는 넣으면 안된다.
