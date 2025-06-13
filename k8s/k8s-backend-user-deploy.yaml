@@ -29,5 +29,5 @@ spec: #deployment입장에서 sepc이다.
           configMap:
             name: backend-user-config #컨피그 맵의 backend-user-config 이름을 가진 파일로 접근하겠다.
             items:
-              - Key: application-dev.yml #key가 되는 것이 data안에 있는 이름을 의미한다.
+              - key: application-dev.yml #key가 되는 것이 data안에 있는 이름을 의미한다.
                 path: application-dev.yml #볼륨 마운트 해서 쓸 이름
