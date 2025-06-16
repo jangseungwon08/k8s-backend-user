@@ -29,6 +29,7 @@ public class SiteUserService {
         SiteUser siteUser = dto.toEntity();
         siteUserRepository.save(siteUser);
 
+        log.info("DB 저장 완료");
         SiteUserInfoEvent event = SiteUserInfoEvent.fromEntity("Create", siteUser);
         kafkaMessageProducer.send(SiteUserInfoEvent.Topic, event);
     }
