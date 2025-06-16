@@ -1,8 +1,10 @@
 package com.welab.k8s_backend_user.api.open;
 
 import com.welab.k8s_backend_user.common.dto.ApiResponseDto;
+import com.welab.k8s_backend_user.domain.dto.SiteUserLoginDto;
 import com.welab.k8s_backend_user.domain.dto.SiteUserRegisterDto;
 import com.welab.k8s_backend_user.remote.alim.RemoteAlimService;
+import com.welab.k8s_backend_user.secret.jwt.dto.TokenDto;
 import com.welab.k8s_backend_user.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserController {
     private final RemoteAlimService remoteAlimService;
-    private final SiteUserService siteUserService;
 
     @GetMapping(value = "/test")
     public String helloController(){
@@ -28,11 +29,5 @@ public class UserController {
         String remoteMessage = remoteAlimService.hello().getData();
         String userResponse = "웰컴 투 백엔드 유저 리모트 알림 메시지" + remoteMessage;
         return ApiResponseDto.createOk(userResponse);
-    }
-
-    @PostMapping(value = "/register")
-    public ApiResponseDto<String> register(@RequestBody @Valid SiteUserRegisterDto dto){
-        siteUserService.registerUser(dto);
-        return ApiResponseDto.defaultOk();
     }
 }
