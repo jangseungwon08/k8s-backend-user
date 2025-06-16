@@ -28,6 +28,7 @@ public class ApiCommonAdvice {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({Exception.class})
     public ApiResponseDto<String> handleException(Exception e) {
+        log.error("Unhandled server error occurred: {}", e.getMessage(), e);
         return ApiResponseDto.createError(
                 "serverError",
                 "서버 에러입니다.");
