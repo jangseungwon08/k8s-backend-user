@@ -8,10 +8,7 @@ import com.welab.k8s_backend_user.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 
@@ -33,4 +30,8 @@ public class UserAuthController {
         return ApiResponseDto.createOk(token);
     }
 
+    @GetMapping(value = "/test")
+    public ApiResponseDto<String> test() {
+        return ApiResponseDto.createOk("버전 1입니다.");
+    }
 }
